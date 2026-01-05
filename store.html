@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>門市資訊｜盲盒販售所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+* { box-sizing: border-box; font-family: "微軟正黑體", Arial, sans-serif; margin: 0; padding: 0; }
+body { background: #fff7ed; color: #0b1c3d; }
+
+/* Header */
+header {
+  background: linear-gradient(135deg,skyblue,skyblue);
+  color: #0b1c3d;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+header a {
+  color: #0b1c3d;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Content */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+h2 {
+  color: #132a5a;
+  margin-bottom: 30px;
+  border-left: 6px solid #ffd166;
+  padding-left: 15px;
+  font-weight: 600;
+}
+
+/* Store Card */
+.store {
+  background: #fff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.store:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.15);
+}
+.store b {
+  font-size: 18px;
+  color: #132a5a;
+}
+
+/* Map */
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 16px;
+  border: 0;
+  margin-bottom: 30px;
+}
+
+/* Footer */
+footer {
+  background: skyblue;
+  color: #0b1c3d;
+  text-align: center;
+  padding: 25px;
+  margin-top: 80px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* AOS animations */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>門市資訊</h1>
+  <p><a href="index.html">返回首頁</a></p>
+</header>
+
+<section>
+  <h2>實體門市</h2>
+
+  <div class="store" data-aos="fade-up">
+    <b>台北旗艦店</b><br><br>
+    地址：台北市中山區XX路100號<br>
+    電話：02-1234-5678<br>
+    營業時間：11:00 - 21:30
+  </div>
+
+  <div class="store" data-aos="fade-up">
+    <b>台中門市</b><br><br>
+    地址：台中市西屯區XX路88號<br>
+    電話：04-2233-4455<br>
+    營業時間：11:00 - 21:00
+  </div>
+
+  <div class="store" data-aos="fade-up">
+    <b>高雄門市</b><br><br>
+    地址：高雄市前鎮區XX路66號<br>
+    電話：07-9988-7766<br>
+    營業時間：12:00 - 22:00
+  </div>
+</section>
+
+<footer>盲盒販售所</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: true
+  });
+</script>
+
+</body>
+</html>

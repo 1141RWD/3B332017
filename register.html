@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>會員註冊</title>
+<style>
+  /* 全局樣式 */
+  body {
+    font-family: "微軟正黑體", sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  /* 卡片樣式 */
+  .card {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+    width: 100%;
+    max-width: 400px;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  /* 表單樣式 */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  input:focus {
+    border-color: steelblue;
+    outline: none;
+  }
+
+  button {
+    padding: 12px;
+    background: steelblue;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #1c5fa8;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h2>會員註冊</h2>
+  <form>
+    <label>帳號：</label>
+    <input type="text" placeholder="輸入帳號" required>
+    
+    <label>密碼：</label>
+    <input type="password" placeholder="輸入密碼" required>
+    
+    <button type="submit">送出</button>
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>客服資訊｜盲盒販售所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial}
+body{margin:0;background:#fff7e6}
+
+header{
+ background:linear-gradient(135deg,skyblue,skyblue);
+ color:#0b1c3d;padding:40px 20px;text-align:center
+}
+header a{color:#0b1c3d;text-decoration:none}
+
+section{
+ max-width:600px;
+ margin:60px auto;
+ background:#fff;
+ padding:40px;
+ border-radius:18px;
+ box-shadow:0 20px 35px rgba(0,0,0,.15)
+}
+
+input,textarea{
+ width:100%;
+ padding:14px;
+ margin:12px 0;
+ border-radius:10px;
+ border:1px solid #ccc;
+ font-size:15px
+}
+input:focus,textarea:focus{
+ outline:none;
+ border-color:#fff7e6;
+}
+
+button{
+ width:100%;
+ padding:14px;
+ background:#fff7e6;
+ color:#0b1c3d;
+ border:none;
+ border-radius:10px;
+ font-size:16px;
+ cursor:pointer;
+ transition:.3s
+}
+button:hover{opacity:.85}
+
+footer{
+ background:skyblue;color:#0b1c3d;
+ text-align:center;padding:25px;margin-top:80px
+}
+
+.social{
+  margin-top:30px;
+  text-align:center;
+}
+
+.social p{
+  margin-bottom:12px;
+  font-weight:600;
+  color:#0b1c3d;
+}
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:8px 10px;
+  padding:10px 16px;
+  border-radius:12px;
+  background:skyblue;
+  color:#0b1c3d;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s;
+}
+
+.social a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>客服資訊</h1>
+  <p><a href="index.html">返回首頁</a></p>
+</header>
+
+<section>
+  <form onsubmit="sendMsg(event)">
+    <input type="text" placeholder="您的姓名" required>
+    <input type="email" placeholder="Email" required>
+    <textarea rows="5" placeholder="請輸入您的問題或建議" required></textarea>
+    <button type="submit">送出留言</button>
+  </form>
+</section>
+
+<div class="social">
+  <p>📱 也可以透過社群聯絡我們</p>
+
+  <a href="https://www.instagram.com/" target="_blank">
+     Instagram
+  </a>
+
+  <a href="https://www.line.me/tw/" target="_blank">
+     LINE
+  </a>
+  <a href="https://www.facebook.com/" target="_blank">
+     Facebook
+  </a>
+</div>
+
+
+<footer>盲盒販售所</footer>
+
+<script>
+function sendMsg(e){
+  e.preventDefault();
+  alert("留言已送出，客服將盡快與您聯繫！");
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>

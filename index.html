@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>盲盒販售所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <button onclick="toggleBg()" id="bgToggle" class="darkBtn">🌙</button>
+
+        <h1>盲盒小賣部</h1>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav>
+          <ul id="menu">
+            <li><a onclick="goTo('home')">首頁</a></li>
+            <li>
+              <a onclick="goTo('lulu')">LULU豬 ▾</a>
+              <div class="dropdown">
+                <a onclick="goTo('lulu','l1')">繽紛樂園系列</a>
+                <a onclick="goTo('lulu','l2')">動物派對系列</a>
+                <a onclick="goTo('lulu','l3')">家小館系列</a>
+                <a onclick="goTo('lulu','l4')">聖誕小鎮系列</a>
+                <a onclick="goTo('lulu','l6')">旅行系列</a>
+                <a onclick="goTo('lulu','l7')">陽光派對系列</a>
+                <a onclick="goTo('lulu','l8')">農場系列</a>
+                <a onclick="goTo('lulu','l9')">歡樂時光系列</a>
+              </div>
+            </li>
+      
+            <li>
+              <a onclick="goTo('twinkle')">星星人 ▾</a>
+              <div class="dropdown">
+                <a onclick="goTo('twinkle','t1')">美味時刻系列</a>
+                <a onclick="goTo('twinkle','t2')">來自星星的禮物系列</a>
+                <a onclick="goTo('twinkle','t3')">星星人隨心配系列</a>
+                <a onclick="goTo('twinkle','t4')">123！星星人系列</a>
+                <a onclick="goTo('twinkle','t5')">我們都是星星人系列</a>
+                <a onclick="goTo('twinkle','t6')">星星人隨心配A系列</a>
+                <a onclick="goTo('twinkle','t7')">迷你包掛件盲盒系列</a>
+                <a onclick="goTo('twinkle','t8')">毛絨掛件盲盒系列</a>
+              </div>
+            </li>
+      
+            <li>
+              <a onclick="goTo('LABUBU')">LABUBU ▾</a>
+              <div class="dropdown">
+                <a onclick="goTo('LABUBU','L1')">可口可樂系列</a>
+                <a onclick="goTo('LABUBU','L2')">THE MONSTERS 前方高能系列</a>
+                <a onclick="goTo('LABUBU','L3')">航海王系列</a>
+                <a onclick="goTo('LABUBU','L4')">THE MONSTERS頑皮日記系列</a>
+                <a onclick="goTo('LABUBU','L5')">THE MONSTERS一起玩遊戲系列</a>
+                <a onclick="goTo('LABUBU','L6')">THE MONSTERS 看不見我系列</a>
+                <a onclick="goTo('LABUBU','L7')">THE MONSTERS慵懶瑜伽系列</a>
+                <a onclick="goTo('LABUBU','L8')">THE MONSTERS搪膠毛絨‌公仔</a>
+              </div>
+            </li>
+      
+      
+            <li>
+              <a onclick="goTo('stween bean')">小甜豆 ▾</a>
+              <div class="dropdown">
+                <a onclick="goTo('stween bean','s1')">定格時光點心盒子系列</a>
+                <a onclick="goTo('stween bean','s2')">有關愛的語言系列</a>
+                <a onclick="goTo('stween bean','s3')">小甜豆成長圖鑒系列</a>
+                <a onclick="goTo('stween bean','s4')">小甜豆溫泉旅行手辦</a>
+                <a onclick="goTo('stween bean','s5')">小甜豆愛的抱抱系列手辦</a>
+              </div>
+            </li>
+
+            <li>
+                <a onclick="goTo('dimoo')">DIMOO ▾</a>
+                <div class="dropdown">
+                  <a onclick="goTo('dimoo','d1')">一盞風月系列</a>
+                  <a onclick="goTo('dimoo','d2')">限定時光系列</a>
+                  <a onclick="goTo('dimoo','d3')">動物王國系列</a>
+                  <a onclick="goTo('dimoo','d4')">如果今天星期八系列</a>
+                  <a onclick="goTo('dimoo','d5')">DIMOO地球日手辦</a>
+                  <a onclick="goTo('dimoo','d6')">DIMOO限定時光系列香氛掛件</a>
+                  <a onclick="goTo('dimoo','d7')">MEGA JUST DIMOO 400% 倚夢而生</a>
+                  <a onclick="goTo('dimoo','d8')">DIMOO在你身邊系列</a>
+                </div>
+              </li>
+              <li>
+                <a onclick="goTo('cart')">🛒 購物車 (<span id="cartCount">0</span>)</a>
+              </li>
+              <li><a href="#" onclick="showPage('order-query')">訂單查詢</a></li>
+              <!-- 🔍 搜尋框 --> 
+               <div class="search-box"> 
+                <input type="text" id="searchInput" placeholder="搜尋商品關鍵字..." oninput="searchProducts()" > 
+              </div>
+          </ul>
+        </nav>
+      </header>
+      
+      <script>
+      
+      // 漢堡選單
+      function toggleMenu(){document.getElementById("menu").classList.toggle("show");}
+      function closeMenu(){document.getElementById("menu").classList.remove("show");}
+      </script>
+      
+
+<!-- Home Slider -->
+<div class="slider active" id="home">
+<div class="slide active">
+<img src="img/123星星人系列7.webp">
+<div class="slide-text"></div>
+</div>
+<div class="slide">
+<img src="img/lulu豬陽光派對冰淇淋車場景.webp">
+<div class="slide-text"></div>
+</div>
+<div class="slide">
+<img src="img/罐頭豬LuLu 草裙異色.webp">
+<div class="slide-text"></div>
+</div>
+<div class="slide">
+<img src="img/lulu豬(海洋系列).webp">
+<div class="slide-text"></div>
+</div>
+<div class="slide">
+<img src="img/一起玩遊戲系列2.jpg">
+<div class="slide-text"></div>
+</div>
+<button class="slider-btn prev" onclick="changeSlide(-1)">‹</button>
+<button class="slider-btn next" onclick="changeSlide(1)">›</button>
+</div>
+
+<section id="lulu">
+<h3>LULU豬</h3>
+<div class="products">
+<div class="card" id="l1"><img src="img/lulu豬(繽紛樂園系列).webp"><div class="info"><h4>罐頭LULU豬繽紛樂園系列</h4><button onclick="goToDetail('l1')">查看商品</button></div></div>
+<div class="card" id="l2"><img src="img/lulu豬(lu家小館系列).webp"><div class="info"><h4>罐頭LULU豬lu家小館系列</h4><button onclick="goToDetail('l2')">查看商品</button></div></div>
+<div class="card" id="l3"><img src="img/lulu豬(動物派對系列).webp"><div class="info"><h4>罐頭LULU豬動物派對系列</h4><button onclick="goToDetail('l3')">查看商品</button></div></div>
+<div class="card" id="l4"><img src="img/lulu豬(旅行系列).webp"><div class="info"><h4>罐頭LULU豬旅行系列</h4><button onclick="goToDetail('l4')">查看商品</button></div></div>
+<div class="card" id="l5"><img src="img/lulu豬(歡樂時光系列).webp"><div class="info"><h4>罐頭LULU豬歡樂時光系列</h4><button onclick="goToDetail('l5')">查看商品</button></div></div>
+<div class="card" id="l6"><img src="img/lulu豬(聖誕小鎮系列).webp"><div class="info"><h4>罐頭LULU豬聖誕小鎮系列</h4><button onclick="goToDetail('l6')">查看商品</button></div></div>
+<div class="card" id="l7"><img src="img/lulu豬(農場系列).webp"><div class="info"><h4>罐頭LULU豬農場系列</h4><button onclick="goToDetail('l7')">查看商品</button></div></div>
+<div class="card" id="l8"><img src="img/lulu豬(陽光派對系列).webp"><div class="info"><h4>罐頭LULU豬陽光派對系列</h4><button onclick="goToDetail('l8')">查看商品</button></div></div>
+</div>
+</section>
+
+<section id="twinkle">
+    <h3>星星人</h3>
+    <div class="products">
+    <div class="card" id="t1"><img src="img/123!來自星星人系列.jpg"><div class="info"><h4>123！星星人系列系列</h4><button onclick="goToDetail('t1')">查看商品</button></div></div>
+    <div class="card" id="t2"><img src="img/來自星星的禮物系列.png"><div class="info"><h4>來自星星的禮物系列</h4><button onclick="goToDetail('t2')">查看商品</button></div></div>
+    <div class="card" id="t3"><img src="img/星星人的美味時刻系列.png"><div class="info"><h4>星星人的美味時刻系列</h4><button onclick="goToDetail('t3')">查看商品</button></div></div>
+    <div class="card" id="t4"><img src="img/星星人隨心配系列.jpg"><div class="info"><h4>星星人隨心配系列</h4><button onclick="goToDetail('t4')">查看商品</button></div></div>
+    <div class="card" id="t5"><img src="img/星星人隨心配系列A.jpg"><div class="info"><h4>星星人隨心配A系列</h4><button onclick="goToDetail('t5')">查看商品</button></div></div>
+    <div class="card" id="t6"><img src="img/我們都是星星人.jpg"><div class="info"><h4>我們都是星星人系列</h4><button onclick="goToDetail('t6')">查看商品</button></div></div>
+    <div class="card" id="t7"><img src="img/星星人迷你包掛件盲盒.jpg"><div class="info"><h4>星星人迷你包掛件盲盒系列</h4><button onclick="goToDetail('t7')">查看商品</button></div></div>
+    <div class="card" id="t8"><img src="img/星星人毛絨掛件盲盒.jpg"><div class="info"><h4>星星人毛絨掛件盲盒系列</h4><button onclick="goToDetail('t8')">查看商品</button></div></div>
+    </div>
+</section>
+
+<section id="LABUBU">
+    <h3>LABUBU</h3>
+    <div class="products">
+    <div class="card" id="L1"><img src="img/labubu(可口可樂系列).png"><div class="info"><h4>LABUBU可口可樂系列系列</h4><button onclick="goToDetail('L1')">查看商品</button></div></div>
+    <div class="card" id="L2"><img src="img/labubu(前方高能系列).png"><div class="info"><h4>LABUBU前方高能系列</h4><button onclick="goToDetail('L2')">查看商品</button></div></div>
+    <div class="card" id="L3"><img src="img/labubu(航海王系列).png"><div class="info"><h4>LABUBU航海王系列</h4><button onclick="goToDetail('L3')">查看商品</button></div></div>
+    <div class="card" id="L4"><img src="img/labubu一起玩遊戲系列.jpg"><div class="info"><h4>LABUBU一起玩遊戲系列</h4><button onclick="goToDetail('L4')">查看商品</button></div></div>
+    <div class="card" id="L5"><img src="img/labubu頑皮日記系列.jpg"><div class="info"><h4>LABUBU頑皮日記系列</h4><button onclick="goToDetail('L5')">查看商品</button></div></div>
+    <div class="card" id="L6"><img src="img/THE MONSTERS 看不見我系列.png"><div class="info"><h4>LABUBU看不見我系列</h4><button onclick="goToDetail('L6')">查看商品</button></div></div>
+    <div class="card" id="L7"><img src="img/THE MONSTERS慵懶瑜伽系列.jpg"><div class="info"><h4>LABUBU慵懶瑜伽系列</h4><button onclick="goToDetail('L7')">查看商品</button></div></div>
+    <div class="card" id="L8"><img src="img/THE MONSTERS搪膠毛絨‌公仔.png"><div class="info"><h4>LABUBU THE MONSTERS搪膠毛絨‌公仔</h4><button onclick="goToDetail('L8')">查看商品</button></div></div>
+    </div>
+</section>
+
+
+<section id="stween bean">
+    <h3>stween bean</h3>
+    <div class="products">
+    <div class="card" id="s1"><img src="img/小甜豆成長圖鑒系列.jpg"><div class="info"><h4>小甜豆成長圖鑒系列</h4><button onclick="goToDetail('s1')">查看商品</button></div></div>
+    <div class="card" id="s2"><img src="img/小甜豆溫泉旅行手辦.jpg"><div class="info"><h4>小甜豆成長圖鑒系列</h4><button onclick="goToDetail('s2')">查看商品</button></div></div>
+    <div class="card" id="s3"><img src="img/小甜豆定格時光點心盒子系列.jpg"><div class="info"><h4>小甜豆定格時光點心盒子系列</h4><button onclick="goToDetail('s3')">查看商品</button></div></div>
+    <div class="card" id="s4"><img src="img/小甜豆愛的抱抱系列.jpg"><div class="info"><h4>小甜豆愛的抱抱系列</h4><button onclick="goToDetail('s4')">查看商品</button></div></div>
+    <div class="card" id="s5"><img src="img/小甜豆有關愛的語言系列.jpg"><div class="info"><h4>小甜豆有關愛的語言系列</h4><button onclick="goToDetail('s5')">查看商品</button></div></div>
+    </div>
+</section>
+
+<section id="dimoo">
+    <h3>DIMOO</h3>
+    <div class="products">
+    <div class="card" id="d1"><img src="img/MEGA JUST DIMOO 400% 倚夢而生.png"><div class="info"><h4>MEGA JUST DIMOO 400% 倚夢而生</h4><button onclick="goToDetail('d1')">查看商品</button></div></div>
+    <div class="card" id="d2"><img src="img/DIMOO一盞風月系列.jpg"><div class="info"><h4>DIMOO一盞風月系列</h4><button onclick="goToDetail('d2')">查看商品</button></div></div>
+    <div class="card" id="d3"><img src="img/DIMOO動物王國系列.jpg"><div class="info"><h4>DIMOO動物王國系列</h4><button onclick="goToDetail('d3')">查看商品</button></div></div>
+    <div class="card" id="d4"><img src="img/DIMOO在你身邊系列.jpg"><div class="info"><h4>DIMOO在你身邊系列</h4><button onclick="goToDetail('d4')">查看商品</button></div></div>
+    <div class="card" id="d5"><img src="img/DIMOO地球日手辦.jpg"><div class="info"><h4>DIMOO地球日手辦</h4><button onclick="goToDetail('d5')">查看商品</button></div></div>
+    <div class="card" id="d6"><img src="img/DIMOO限定時光系列香氛掛件.jpg"><div class="info"><h4>DIMOO限定時光系列香氛掛件</h4><button onclick="goToDetail('d6')">查看商品</button></div></div>
+    <div class="card" id="d7"><img src="img/DIMOO如果今天星期八系列.png"><div class="info"><h4>DIMOO如果今天星期八系列</h4><button onclick="goToDetail('d7')">查看商品</button></div></div>
+    <div class="card" id="d8"><img src="img/DIMOO限定時光系列.png"><div class="info"><h4>DIMOO限定時光系列</h4><button onclick="goToDetail('d8')">查看商品</button></div></div>
+    </div>
+</section>
+
+<section id="cart" class="cart-section">
+  <h2>🛒<font color="#000">購物車</font></h2></div>
+  <div id="cartList"></div>
+  <div class="cart-summary">
+    <p id="cartQty">商品總數：0</p>
+    <p id="cartTotal">總金額：$0</p>
+
+    <div class="cart-actions">
+      <button onclick="clearCart()">清空購物車</button>
+      <button onclick="goTo('checkout')">前往結帳</button>
+    </div>
+  </div>
+</section>
+
+<section id="checkout">
+  <h3><i class="fas fa-shopping-cart"></i> 結帳頁面</h3>
+  <div class="checkout-container">
+    <form id="checkoutForm">
+      <!-- 姓名 -->
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i> 聯絡人姓名：</label>
+        <input type="text" id="name" name="name" required placeholder="請輸入姓名">
+      </div>
+
+      <!-- 電子郵件 -->
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> 電子郵件：</label>
+        <input type="email" id="email" name="email" required placeholder="example@mail.com">
+      </div>
+
+      <!-- 付款運送方式 -->
+      <div class="form-group">
+        <label><i class="fas fa-truck"></i> 付款運送方式：</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" onclick="go711pay(1)" name="payOption" value="宅配" required> 宅配到府
+          </label>
+          <label>
+            <input type="radio" onclick="go711pay(1)" name="payOption" value="超商取貨">
+            7-11 取貨(先付款)
+          </label>
+          <label>
+            <input type="radio" onclick="go711pay(0)" name="payOption" value="貨到付款"> 7-11貨到付款
+          </label>
+        </div>
+      </div>
+
+      <!-- 付款方式 -->
+      <div class="form-group" id="pay_method">
+        <label><i class="fas fa-credit-card"></i> 付款方式：</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="payment" value="信用卡" required> <i class="fas fa-credit-card"></i> 信用卡 (VISA、MasterCard、JCB)
+          </label>
+          <label>
+            <input type="radio" name="payment" value="ATM轉帳"> ATM 轉帳
+          </label>
+          <label>
+            <input type="radio" name="payment" value="LINE Pay"> LINE Pay
+          </label>
+        </div>
+      </div>
+
+      <!-- 備註 -->
+      <div class="form-group">
+        <label for="note"><i class="fas fa-sticky-note"></i> 備註：</label>
+        <textarea id="note" name="note" placeholder="可填寫特殊需求" rows="3"></textarea>
+      </div>
+
+      <!-- 按鈕 -->
+      <div class="form-actions">
+        <button type="submit" class="btn-confirm"><i class="fas fa-check-circle"></i> 確認付款</button>
+        <button type="button" class="btn-back" onclick="goTo('cart')"><i class="fas fa-arrow-left"></i> 返回購物車</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="order-query">
+  <h2>訂單查詢</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>編號</th>
+        <th>商品</th>
+        <th>數量</th>
+        <th>金額</th>
+        <th>付款狀態</th>
+      </tr>
+  </thead>
+    <tbody id="orderTableBody">
+      <tr><td colspan="5"><font color="#0b1c3d">目前沒有訂單紀錄</font></td></tr>
+    </tbody>
+  </table>
+  <br>
+  <button onclick="showPage('checkout')">回到結帳頁</button>
+</section>
+
+<section id="product-detail">
+  <h3>商品詳細頁</h3>
+
+  <div style="
+    max-width:800px;
+    margin:auto;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 20px 35px rgba(0,0,0,.15);
+    padding:40px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+  ">
+
+    <!-- 商品圖片 -->
+    <div id="detail-slider" class="detail-slider">
+    <img id="detailImg">
+    <button class="detail-btn left" onclick="changeDetailImg(-1)">‹</button>
+    <button class="detail-btn right" onclick="changeDetailImg(1)">›</button>
+    </div>
+
+    <!-- 商品資訊 -->
+    <div>
+      <h2 id="detailName"></h2>
+      <p id="detailPrice" style="color:#e63946;font-size:22px;margin:15px 0"></p>
+
+      <p style="line-height:1.8;color:#444">
+        本商品為原廠正品盲盒，隨機出貨，實際款式以實物為準。
+      </p>
+
+      <br>
+
+      <button onclick="addToCart()" style="width:100%;padding:14px;font-size:16px">
+        加入購物車
+      </button>
+
+      <br><br>
+      <button onclick="goBack()" style="width:100%;padding:14px;font-size:16px; margin-top:10px;">
+        返回商品列表
+      </button>
+  
+      
+    </div>
+  </div>
+</section>
+
+<!-- 訂單查詢頁面 -->
+<section id="order-query" style="display:none;">
+  <h3>訂單查詢</h3>
+  <div class="order-list" style="max-width:800px;margin:auto;padding:30px;background:#fff;border-radius:10px;box-shadow:0 15px 30px rgba(0,0,0,0.15);">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead>
+        <tr style="background:#1e4c8b;color:#fff;">
+          <th style="padding:10px;border:1px solid #ccc;">訂單編號</th>
+          <th style="padding:10px;border:1px solid #ccc;">商品名稱</th>
+          <th style="padding:10px;border:1px solid #ccc;">數量</th>
+          <th style="padding:10px;border:1px solid #ccc;">總金額</th>
+          <th style="padding:10px;border:1px solid #ccc;">付款狀態</th>
+        </tr>
+      </thead>
+      <tbody id="orderTableBody">
+        <!-- JS 將動態生成訂單 -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- Info Area -->
+<div class="info-area">
+<div class="info-box" onclick="location.href='register.html'">會員註冊</div>
+<div class="info-box" onclick="location.href='store.html'">門市資訊</div>
+<div class="info-box" onclick="location.href='guide.html'">購物說明</div>
+<div class="info-box" onclick="location.href='service.html'">客服資訊</div>
+</div>
+
+<section id="register"><h3>會員註冊</h3></section>
+<section id="store"><h3>門市資訊</h3></section>
+<section id="guide"><h3>購物說明</h3></section>
+<section id="service"><h3>客服資訊</h3></section>
+
+<footer>盲盒販賣所</footer>
+<script src="main.js"></script>
+</body>
+</html>

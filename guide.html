@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>購物說明｜盲盒販售所</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial}
+body{margin:0;background:#fff7e6}
+
+header{
+ background:linear-gradient(135deg,skyblue,skyblue);
+ color:#0b1c3d;
+ padding:50px 20px;
+ text-align:center
+}
+header a{color:#0b1c3d;text-decoration:none;font-weight:600}
+
+section{
+ max-width:950px;
+ margin:70px auto;
+ background:#fff;
+ padding:50px;
+ border-radius:22px;
+ box-shadow:0 25px 40px rgba(0,0,0,.15)
+}
+
+h2{
+ color:#0b1c3d;
+ margin:50px 0 25px;
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+
+h2 i{color:skyblue}
+
+.flow{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+ gap:20px;
+ margin-top:20px;
+}
+
+.flow div{
+ background:#fff7e6;
+ border-radius:16px;
+ padding:25px;
+ text-align:center;
+ box-shadow:0 8px 18px rgba(0,0,0,.1);
+ transition:.3s;
+}
+
+.flow div:hover{
+ transform:translateY(-6px);
+}
+
+.flow i{
+ font-size:28px;
+ color:#0b1c3d;
+ margin-bottom:12px;
+}
+
+.notice{
+ background:#fffbeF;
+ border-left:6px solid skyblue;
+ padding:25px;
+ border-radius:14px;
+ line-height:1.9;
+}
+
+.notice p{
+ margin:10px 0;
+ display:flex;
+ gap:10px;
+ align-items:flex-start;
+}
+
+.notice i{
+ color:#e67e22;
+ margin-top:4px;
+}
+
+.pay{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:30px;
+ margin-top:20px;
+}
+
+.pay div{
+ background:#f8f9fa;
+ padding:25px;
+ border-radius:16px;
+ box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.pay h3{
+ margin-top:0;
+ color:#0b1c3d;
+}
+
+footer{
+ background:skyblue;
+ color:#0b1c3d;
+ text-align:center;
+ padding:25px;
+ margin-top:90px;
+ font-weight:600
+}
+
+@media(max-width:768px){
+ .pay{grid-template-columns:1fr}
+}
+</style>
+</head>
+</head>
+<body>
+
+<header>
+  <h1>購物說明</h1>
+  <p><a href="index.html">返回首頁</a></p>
+</header>
+
+<section>
+
+  <h2><i class="fa-solid fa-cart-shopping"></i> 購物流程</h2>
+  <div class="flow">
+    <div>
+      <i class="fa-solid fa-box"></i>
+      <p>選擇商品<br>加入購物車</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-clipboard-check"></i>
+      <p>確認商品<br>數量與金額</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-pen-to-square"></i>
+      <p>填寫訂購資料<br>送出訂單</p>
+    </div>
+    <div>
+      <i class="fa-solid fa-truck"></i>
+      <p>完成付款<br>等待出貨</p>
+    </div>
+  </div>
+
+  <h2><i class="fa-solid fa-circle-exclamation"></i> 注意事項</h2>
+  <div class="notice">
+    <p><i class="fa-solid fa-triangle-exclamation"></i> 盲盒商品為隨機出貨，恕不挑款。</p>
+    <p><i class="fa-solid fa-triangle-exclamation"></i> 商品拆封後，除瑕疵外恕不退換。</p>
+    <p><i class="fa-solid fa-triangle-exclamation"></i> 圖片僅供參考，實品以實物為準。</p>
+  </div>
+
+  <h2><i class="fa-solid fa-credit-card"></i> 付款與配送</h2>
+  <div class="pay">
+    <div>
+      <h3>💳 付款方式</h3>
+      <p>信用卡</p>
+      <p>ATM 轉帳</p>
+    </div>
+    <div>
+      <h3>🚚 配送方式</h3>
+      <p>宅配到府</p>
+      <p>超商取貨</p>
+    </div>
+  </div>
+
+</section>
+<footer>盲盒販售所</footer>
+</body>
+</html>
